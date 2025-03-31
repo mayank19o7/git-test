@@ -61,6 +61,31 @@ BEGIN
 	IF W_COUNT=0 THEN		
 		-- Objective
 		
+		INSERT INTO Employees (Employee_ID, First_Name, Last_Name, Email, Salary, Hire_Date)
+		VALUES (101, 'John', 'Doe', 'john.doe@example.com', 50000, SYSDATE);
+
+		-- Update statement for Employees table
+		UPDATE Employees 
+		SET Salary = Salary * 1.1 
+		WHERE Employee_ID = 101;
+
+		-- Insert statement for a Products table
+		INSERT INTO Products (Product_ID, Product_Name, Category, Price, Stock_Quantity)
+		VALUES (2001, 'Laptop', 'Electronics', 1200, 50);
+
+		-- Update statement for Products table
+		UPDATE Products 
+		SET Price = Price - 100 
+		WHERE Product_ID = 2001;
+
+		-- Insert statement for an Orders table
+		INSERT INTO Orders (Order_ID, Customer_ID, Order_Date, Total_Amount)
+		VALUES (5001, 3001, SYSDATE, 250.75);
+
+		-- Update statement for Orders table
+		UPDATE Orders 
+		SET Total_Amount = Total_Amount + 50 
+		WHERE Order_ID = 5001;
 		
 		--END OF ACTIVATION CONFIGURATION FOR <TICKET3>
 		P_LOGCONSCRIPT ( W_VERSION, SYSTIMESTAMP, W_STREAM, W_STATUS, W_JIRAREF, W_ERRCODE, W_ERRLIBELLE ); 		 --DO NOT CHANGE
